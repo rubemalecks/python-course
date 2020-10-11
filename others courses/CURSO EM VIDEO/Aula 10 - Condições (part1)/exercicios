@@ -1,0 +1,16 @@
+28 - Escreva um program que faça o pc pensar em um numero de 0 a 5  e peça pra o usuario tentar adivinhar o numero do pc o programa deverá escrever se o usuario venceu ou perdeu
+
+29 - escreva um programa que leia a velocidade de um carro e se ele ultrapassar 80km mostre uma msg dizendo que ele foi multado a multa vai custar 7,00 por cada km acima do limite
+
+30 - fazer um programa que mostra se o numero é par ou impar
+
+31 - Desenvolva um programa que pergunte a distancia de uma viagem em km. Calcule o preço da passagem, cobrando 0,50 por km para viagens até 200 km 
+e 0,45 para viagens mais longas
+
+32 - ler um ano e mostre se é bissexto
+
+33 - faça um programa que leia 3 numeros, mostre o maior e menor
+
+34 - um programa que pergunte o salario do funcionario e calcule o valor do aumento. Para salários superiores a 1.250,00 calcule 10 % de aumento. para inferiores ou iguais o aumento é de 15%.
+
+35 - desenvolva um programa que leia 3 retas e mostre se pode formar triangulo
