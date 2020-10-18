@@ -7,3 +7,14 @@ conversões terá um parâmetro formal para registrar se é A.M. ou P.M.
 Inclua um loop que permita que o usuário repita esse cálculo para novos 
 valores de entrada todas as vezes que desejar.'''
 
+def relogio(horas, minutos):
+    a_p = 'a.m' if horas < 12 else 'PM'
+    horas = horas if horas <= 12 else horas - 12
+    return str(horas) + ':' + str(minutos) + a_p 
+while True:
+    hora = int(input('Digite a hora: '))
+    minuto = int(input('Minutos: '))
+    print(relogio(hora, minuto))
+    continuar = input('Continuar [S/N]? ').upper()
+    if continuar == 'N': 
+        break
