@@ -19,3 +19,6 @@ print(restante, ultimo_nome)
 """Se não será usado o restante da variavel"""
 """Use:"""
 n1, n2, *_ = lista #O *_ é reconhecido como variavel mas outros programadores entendem melhor que voce não irá usar o restante da lista
+
+lista = [1,2,3]
+print(*lista, sep='-') #sep = sepador, *lista = desempacota eles com espaços 
