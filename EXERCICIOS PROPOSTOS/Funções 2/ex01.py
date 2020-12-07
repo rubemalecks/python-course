@@ -3,8 +3,8 @@ e retorne o valor da função2 executada.'''
 
 def func1():
     return 'hello world!'
-def func2(func):
-    return func()
+def func2(funcao):
+    return funcao()
 
 exe = func2(func1)
 print(exe)
