@@ -1,4 +1,7 @@
 cpf = input('CPF: ')
+cpf = cpf.replace('.','')
+cpf = cpf.replace('-','')
+cpf = cpf.replace(' ','')
 cpf_novo = (cpf[:9])
 cont1 = 1
 soma1, soma2, cont2 = 0, 0,0
