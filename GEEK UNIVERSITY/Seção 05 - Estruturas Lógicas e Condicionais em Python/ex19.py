@@ -8,3 +8,4 @@ while True:
         print(f'{c}')
     if c == 100:
         break
+
