@@ -3,43 +3,45 @@
  fevereiro se 2, e assim por diante. """
 
 while True:
-    mes = int(input('digite um numero entre 1-12: '))
+    mes = input('digite um numero entre 1-12: ')
     print('-'*22)
-    if mes == 1:
-        print(f'O {mes}º é Janeiro')
-        break
-    elif mes == 2:
-        print(f'O {mes}º é Fevereiro')
-        break
-    elif mes == 3:
-        print(f'O {mes}º é Março')
-        break
-    elif mes == 4:
-        print(f'O {mes}º é Abril')
-        break
-    elif mes == 5:
-        print(f'O {mes}º é Maio')
-        break
-    elif mes == 6:
-        print(f'O {mes}º é Junho')
-        break
-    elif mes == 7:
-        print(f'O {mes}º é Julho')
-        break
-    elif mes == 8:
-        print(f'O {mes}º é Agosto')
-        break
-    elif mes == 9:
-        print(f'O {mes}º é Setembro')
-        break
-    elif mes == 10:
-        print(f'O {mes}º é Outubro')
-        break
-    elif mes == 11:
-        print(f'O {mes}º é Novembro')
-        break
-    elif mes == 11:
-        print(f'O {mes}º é Dezembro')
-        break
+    if mes.isnumeric() == False or int(mes) > 12 or int(mes) < 1:
+        print('Valor Inválido! Tente Novamente!', '\n-'*22)
     else:
-        print('Valor Inválido! Tente Novamente!')
+        mes = int(mes)
+        break
+if mes == 1:
+    print(f'O {mes}º mês é Janeiro')
+
+elif mes == 2:
+    print(f'O {mes}º mês é Fevereiro')
+
+elif mes == 3:
+    print(f'O {mes}º mês é Março')
+
+elif mes == 4:
+    print(f'O {mes}º mês é Abril')
+
+elif mes == 5:
+    print(f'O {mes}º mês é Maio')
+
+elif mes == 6:
+    print(f'O {mes}º mês é Junho')
+
+elif mes == 7:
+    print(f'O {mes}º mês é Julho')
+
+elif mes == 8:
+    print(f'O {mes}º mês é Agosto')
+
+elif mes == 9:
+    print(f'O {mes}º mês é Setembro')
+
+elif mes == 10:
+    print(f'O {mes}º mês é Outubro')
+
+elif mes == 11:
+    print(f'O {mes}º mês é Novembro')
+
+elif mes == 12:
+    print(f'O {mes}º mês é Dezembro')
