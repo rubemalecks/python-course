@@ -1,11 +1,14 @@
-""" Faça um programa para verificar se um determinado número inteiro e divisível 
+""" Faça um programa para verificar se um determinado número inteiro é divisível 
 por 3 ou 5, mas não simultaneamente pelos dois"""
 
-c = 1
-while True:
-    c += 1
-    if c % 3 == 0 and c % 5 != 0 or c % 5 == 0 and c % 3 != 0:
-        print(f'{c}')
-    if c == 100:
-        break
 
+num = int(input('Digite um numero inteiro: '))
+# if num % 3 == 0 and num % 5 != 0 or num % 5 == 0 and num % 3 != 0:
+if num % 3 == 0 and num % 5 == 0:
+    print('[ERROR] o numero deve ser divisível por 3 [OU] 5')
+elif num % 3 == 0:
+    print(f'{num} é divisível por 3')
+elif num % 5 == 0:
+    print(f'{num} é divisível por 5')
+else:
+    print(f'{num} não é divisível por 3 nem por 5')
