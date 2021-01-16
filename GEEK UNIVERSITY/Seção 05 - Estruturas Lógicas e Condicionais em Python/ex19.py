@@ -3,7 +3,7 @@ por 3 ou 5, mas não simultaneamente pelos dois"""
 
 
 num = int(input('Digite um numero inteiro: '))
-# if num % 3 == 0 and num % 5 != 0 or num % 5 == 0 and num % 3 != 0:
+
 if num % 3 == 0 and num % 5 == 0:
     print('[ERROR] o numero deve ser divisível por 3 [OU] 5')
 elif num % 3 == 0:
