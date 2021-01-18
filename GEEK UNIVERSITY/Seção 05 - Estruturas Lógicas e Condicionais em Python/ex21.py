@@ -8,15 +8,24 @@ operação escolhida. Escreva uma mensagem  de erro se a opção for inválida.
 
 OPÇÃO:
 """
-op = int(input(
-    '''
-[1] SOMA DE 2 NÚMEROS
-[2] DIFERENÇA ENTRE 2 NÚMEROS (MAIOR PELO MENOR)
-[3] PRODUTO ENTRE 2 NÚMEROS
-[4] DIVISÃO ENTRE 2 NÚMEROS (DENOMINADOR NÃO PODE SER ZERO)
+opcoes = 1, 2, 3, 4
+while True:
+    op = int(input(
+        '''
+    [1] SOMA DE 2 NÚMEROS
+    [2] DIFERENÇA ENTRE 2 NÚMEROS (MAIOR PELO MENOR)
+    [3] PRODUTO ENTRE 2 NÚMEROS
+    [4] DIVISÃO ENTRE 2 NÚMEROS (DENOMINADOR NÃO PODE SER ZERO)
 
-OPÇÃO: '''))
-print('-'*27)
+    OPÇÃO: '''))
+    print('-'*27)
+
+    if op not in opcoes:
+        print('[OPÇÃO INVÁLIDA]')
+    else:
+        break
+
+# CRIANDO AS FUNÇÕES
 
 
 def soma(a, b):  # 1 = SOMA
@@ -25,9 +34,9 @@ def soma(a, b):  # 1 = SOMA
 
 def dif(a, b):  # 2 = DIFERENÇA
     if a > b:
-        return(f'A diferença entre {a} e {b} é {a-b}')
+        return f'A diferença entre {a} e {b} é {a-b}'
     elif b > a:
-        return(f'A diferença entre {b} e {a} é {b-a}')
+        return f'A diferença entre {b} e {a} é {b-a}'
     else:
         return f'{a} e {b} são IGUAIS!'
 
@@ -37,9 +46,11 @@ def prod(a, b):  # 3 = PRODUTO ENTRE 2 NUMEROS
 
 
 def div(a, b):  # 4 = DIVISÃO ENTRE 2 NUMEROS
-    if b == 0:
+    if a == 0 and b == 0:
+        return '[NUMERADOR NÃO PODE SER ZERO] \n[DENOMINADOR NÃO PODE SER ZERO]'
+    elif b == 0:
         return '[DENOMINADOR NÃO PODE SER ZERO]'
-    if a == 0:
+    elif a == 0:
         return '[NUMERADOR NÃO PODE SER ZERO]'
     return f'{a} / {b} = {a/b}'
 
