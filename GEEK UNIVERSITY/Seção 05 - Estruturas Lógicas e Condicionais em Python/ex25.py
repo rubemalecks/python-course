@@ -13,10 +13,16 @@ def raizes(a, b, c):
         print(x1, x2)
 
 
-print('-'*23)
-a = int(input('A: '))
-b = int(input('B: '))
-c = int(input('C: '))
-print('-'*23)
-print(f'R: ')
-raizes(a, b, c)
+r = 'S'
+while r == 'S':
+    print('-'*23)
+    a = int(input('A: '))
+    b = int(input('B: '))
+    c = int(input('C: '))
+    print('-'*23)
+    print(f'R: ')
+    raizes(a, b, c)
+    print('-'*23)
+    r = str(input('Deseja continuar? [S/N]\nR:'))[0].upper()
+    if r == 'N':
+        break
