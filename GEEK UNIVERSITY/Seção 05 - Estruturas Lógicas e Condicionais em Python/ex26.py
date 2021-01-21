@@ -4,8 +4,8 @@
  
 CONSUMO     |   (KM/L)  | MENSAGEM
 MENOR QUE   |     8     | VENDA O CARRO!
-ENTRE       |   8 E 14  | ECONÔMICO!
-MAIOR QUE   |    12     | SUPER ECONÔMICO!
+ENTRE       |   8 E 13  | ECONÔMICO!
+MAIOR QUE   |    13     | SUPER ECONÔMICO!
 
 
  """
@@ -15,12 +15,11 @@ lt = float(input('Gasolina (lt): '))
 
 consumo = km/lt
 
-
 if consumo < 8:
     print('VENDA O CARRO!')
-elif consumo <= 14:
+elif consumo <= 13:
     print('Econômico!')
-elif consumo > 12:
+elif consumo > 13:
     print('Super Econômico!')
 else:
     print('Dados inválidos!')
