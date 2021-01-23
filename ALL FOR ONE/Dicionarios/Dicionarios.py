@@ -164,8 +164,8 @@ carrinho = (produto1, produto2)
 print(carrinho)
 -------------------------
 # Forma 3 (CORRETA) - DICIONÁRIO
-carrinho = []
-produto1 = {'nome': 'Playastation 4', 'quantidade': 1, 'preco': 2300.00}
+carrinho = {}
+produto1 = {'nome': 'Playstation 4', 'quantidade': 1, 'preco': 2300.00}
 produto2 = {'nome': 'God of War 4', 'quantidade': 1, 'preco': 150.00}
 
 carrinho.append(produto1)
