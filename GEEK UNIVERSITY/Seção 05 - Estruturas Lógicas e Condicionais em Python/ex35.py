@@ -13,14 +13,13 @@ final = ''
 
 if mes >= 1 and mes <= 12 and ano != 0:
     final = 'DATA VÁLIDA'
-    if mes == 2:
-        if dia >= 29:
-            if ano % 400 == 0:
-                final = 'DATA VÁLIDA'
-            elif ano / 4 == 0 and ano % 100 != 0:
-                final = 'DATA VÁLIDA'
-            else:
-                final = 'DATA INVÁLIDA'
+    if mes == 2 and dia <= 29 :
+        if ano % 400 == 0:
+            final = 'DATA VÁLIDA'
+        elif ano % 4 == 0 and ano % 100 != 0:
+            final = 'DATA VÁLIDA'
+        else:
+            final = 'DATA INVÁLIDA'
     
     elif mes not in meses31 and data >= 31:
         final = 'DATA INVÁLIDA'
