@@ -9,19 +9,22 @@ data = input('DATA: (dd/mm/aaaa): ').split('/')
 meses31 = (1, 3, 5, 7, 8, 10, 12)
 
 dia, mes, ano = int(data[0]), int(data[1]), int(data[2])
+final = ''
 
-if mes >= 1 and mes <= 12:
-    data[1] = 'válido'
-    if dia >= 1 and dia <= 31:
-        if mes == 2:
-            if ano % 400 == 0 and dia <= 29:
-                data[0] = 'válido'
-            elif ano / 4 == 0 and ano % 100 != 0 and dia <= 29:
-                data[0] = 'válido'
-            elif dia > 28:
-                print('ano não bissexto')
+if mes >= 1 and mes <= 12 and ano != 0:
+    final = 'DATA VÁLIDA'
+    if mes == 2:
+        if dia >= 29:
+            if ano % 400 == 0:
+                final = 'DATA VÁLIDA'
+            elif ano / 4 == 0 and ano % 100 != 0:
+                final = 'DATA VÁLIDA'
             else:
-                data[0] = 'válido'
+                final = 'DATA INVÁLIDA'
+    
+    elif mes not in meses31 and data >= 31:
+        final = 'DATA INVÁLIDA'
+else:
+    final = 'DATA INVÁLIDA'
 
-if data[0] == data[1]:
-    print('data válida')
+print(f'{dia:02d}/{mes:02d}/{ano} --- {final}')
