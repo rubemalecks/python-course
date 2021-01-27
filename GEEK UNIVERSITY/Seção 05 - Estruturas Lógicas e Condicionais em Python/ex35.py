@@ -23,8 +23,12 @@ if mes >= 1 and mes <= 12 and ano != 0:
     elif mes == 2 and dia > 29:
         final = 'DATA INVÁLIDA'
     
-    elif mes not in meses31 and data >= 31:
+    elif mes not in meses31:
         final = 'DATA INVÁLIDA'
+        
+    elif dia == 0 or dia > 31:
+        final = 'DATA INVÁLIDA'
+
 else:
     final = 'DATA INVÁLIDA'
 
