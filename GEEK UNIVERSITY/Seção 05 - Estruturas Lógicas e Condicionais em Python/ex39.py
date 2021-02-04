@@ -58,10 +58,14 @@ else:
     bonus = 500
 
 salario_reajustado = salario + (salario * ajuste) + bonus
+
+
 print('---'*23)
+
 if ajuste == 0:
     print('sem ajuste salarial')
 if bonus == 0:
     print('sem bonus')
+
 print(f'bonus R$ {bonus:.2f} | ajuste R$ {ajuste*salario:.2f}')
 print(f'Salário Antigo R$ {salario:.2f}\nSalário Reajustado R$ {salario_reajustado:.2f}')
