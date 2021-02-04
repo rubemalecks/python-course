@@ -28,7 +28,7 @@ hora_saida, min_saida = int(horario_saida[0]), int(horario_saida[1])
 minutagem_saida = hora_saida*60 + min_saida
 
 
-if hora_entrada > hora_saida: # 
+if hora_entrada > hora_saida: 
     tempo_est = (1440 - minutagem_entrada - minutagem_saida)/-60 #1440 = 24 horas
 elif hora_saida >= hora_entrada: # DEPOIS DE 00:00
     tempo_est = (minutagem_saida-1440+minutagem_entrada)/60
