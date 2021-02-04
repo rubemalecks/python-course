@@ -1,8 +1,8 @@
 print('''
 As tarifas de certo parque de estacionamento são as seguintes:
-~ 1ª e 2ª hora - R$ 1,00
-~ 3ª e 4ª hora - R$ 1,40
-~ 5ª hora e seguintes - R$ 2,00
+~ 1ª e 2ª hora - R$ 1,00 cada
+~ 3ª e 4ª hora - R$ 1,40 cada
+~ 5ª hora e seguintes - R$ 2,00 cada
 
 O número de horas a pagar é sempre inteiro e arredondado por excesso. Deste 
 modo, quem estacionar durante 61 minutos pagará por duas horas, que é o
@@ -14,32 +14,35 @@ lidos pelo teclado os momentos de chegada e de partida, escreva na tela
 o preço cobrado pelo estacionamento. Admite-se que a chegada e a partida 
 se dão com intervalo não superior a 24 horas. Portanto, se uma dada hora 
 de chegada for superior à de partida, isso não é uma situação de erro, 
-antes significará que a partida ocorreu no dia seguinte ao da chegada."
-''')
+antes significará que a partida ocorreu no dia seguinte ao da chegada.''')
+
+from math import ceil
+horario_entrada = input('Hora Entrada: ').split(':')
+hora_entrada, min_entrada = int(horario_entrada[0]), int(horario_entrada[1])
+
+minutagem_entrada = hora_entrada*60 + min_entrada 
+
+horario_saida = input('Hora Saida: ').split(':')
+hora_saida, min_saida = int(horario_saida[0]), int(horario_saida[1])
+
+minutagem_saida = hora_saida*60 + min_saida
 
 
-while True:
-    hora_entrada = input('Hora de Entrada(hr:mn): ').split(':')
-    hora_entrada[0],hora_entrada[1]  = int(hora_entrada[0]), int(hora_entrada[1])
-    if hora_entrada[0]> 23 or hora_entrada[0] < 0:
-        print('Horario Inválido')
-    elif hora_entrada[1] > 60 or hora_entrada[1] < 0:
-        print('Horario Inválido')
-    else:
-        break
-while True:
-    hora_saida = input('Hora de Saida(hr:mn): ').split(':')
-    hora_saida[0],hora_saida[1]  = int(hora_saida[0]), int(hora_saida[1])
-    if hora_saida[0]> 23 or hora_saida[0] < 0:
-        print('Horario Inválido')
-    elif hora_saida[1] > 60 or hora_saida[1] < 0:
-        print('Horario Inválido')
-    else:
-        break
+if hora_entrada > hora_saida: # 
+    tempo_est = (1440 - minutagem_entrada - minutagem_saida)/-60 #1440 = 24 horas
+elif hora_saida >= hora_entrada: # DEPOIS DE 00:00
+    tempo_est = (minutagem_saida-1440+minutagem_entrada)/60
 
-if hora_entrada[0] <= hora_saida[0]:
-    horas_pagar = (hora_saida[0] - hora_entrada[0], hora_saida[1] - hora_entrada[1]).split()
-    #horas_pagar[0], horas_pagar[1] = int(horas_pagar[0]), int(horas_pagar[1])
-print(type(horas_pagar))
+minutos = (tempo_est - int(tempo_est))*60
 
 
+if tempo_est >= 1 and tempo_est < 3:
+    pagar = ceil(tempo_est) * 1
+elif tempo_est > 2 and tempo_est < 5:
+    pagar = ceil(tempo_est) * 1.40
+
+else:
+    pagar = ceil(tempo_est) * 2
+horas = int(tempo_est)
+
+print(f'O veiculo ficou estacionado {horas}hrs e {minutos:.0f}min\nTOTAL: R${pagar}')
