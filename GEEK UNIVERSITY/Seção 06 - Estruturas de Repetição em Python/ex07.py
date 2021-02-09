@@ -1,4 +1,4 @@
-print('''\nFaça um program que leia 10 inteiros positivos, ignorando não positivos,
+print('''\nFaça um programa que leia 10 inteiros positivos, ignorando não positivos,
 e imprima sua média''')
 
 
