@@ -6,7 +6,7 @@ print('''Escreva um programa completo que permita a qualquer aluno
  terminará quando for introduzido um valor que não seja válido como 
  nota de aprovação\n''')
 
-x, n, soma = 0, 0,0
+x, n, soma = 0, 0, 0
 while True:
     x = float(input('Digite a nota: '))
     if x >= 10 and x <= 20:
