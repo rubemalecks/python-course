@@ -5,3 +5,23 @@ mostre os valores pares e ímpares em uma ordem crescente.
 ''')
 #[[2,4,6][1,3,5,7]]
 # printas pares e impares separadamente
+n = int()
+impar = list()
+par = list()
+lista_num = list()
+
+c = 1
+while c <= 7:
+    n = int(input(f'Digite o {c}º número: '))
+    if n % 2 == 0:
+        impar.append(n)
+    else:
+        par.append(n)
+    c+=1
+par.sort()
+impar.sort()
+lista_num.append(par)
+lista_num.append(impar)
+
+print(f'Os números impares são: {lista_num[0]}')
+print(f'Os números pares são: {lista_num[1]}')
