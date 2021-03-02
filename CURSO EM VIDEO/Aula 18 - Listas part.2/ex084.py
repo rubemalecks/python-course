@@ -39,5 +39,5 @@ while True:
         break
 print('-='*42)
 print(f'Ao todo foram cadastradas {c_pessoas} pessoas.')
-print(f'O maior peso foi {maior:.2f}kg de {p_maior}.')
-print(f'O menor peso foi {menor:.2f}kg de {p_menor}.')
+print(f'O maior peso foi {maior:.1f}kg de {p_maior}.')
+print(f'O menor peso foi {menor:.1f}kg de {p_menor}.')
