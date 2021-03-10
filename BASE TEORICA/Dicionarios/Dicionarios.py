@@ -1,7 +1,7 @@
 """
 Dicionários
 
-OBS: Em algumas linguagens de programação, os dicioários Python 
+OBS: Em algumas linguagens de programação, os dicionários  
 são conhecidos por mapas.
 
 Dicionários são coleções do tipo chave/valor
@@ -12,7 +12,7 @@ print(type({}))
 
 OBS: Sobre dicionários:
     - Chave e valor são separados por 2 pontos 'chave:valor';
-    - Tanto chave qaunto valor podem ser qualquer tipo de dado;
+    - Chave pode ser qualquer tipo imutavél, valor pode ser qualquer tipo de dado;
     - Podemos misturar tipos de dados;
 -----------------------------------------
 # Criação de Dicionários
@@ -47,7 +47,7 @@ print(paises.get('ru')) # caso não encontre a chave retorna None, sem gerar Key
 
 
 # Outro Mod da forma 2:
-pais = paises.get('ru', 'Não Escontrei') # pais sempre vai receber um valor
+pais = paises.get('ru', 'Não Encontrei') # pais sempre vai receber um valor
 
 print(pais)
 # Podemos definir um valor padrão caso não encontremos o objeto com a chave informada
