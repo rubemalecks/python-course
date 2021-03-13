@@ -64,8 +64,7 @@ if 'ru' in paises:
     russia = paises ['ru']
     
 ---------------------------------------------
-# Podemos utilizar qualquer tipo de dado inclusive (int, float, string, bool) 
-# até listas e tuplas, como chaves
+# Podemos utilizar qualquer tipo de dado inclusive (int, float, string, bool, tuplas) 
 
 # Tuplas por exemplo são bastante interessantes como chaves, pois são imutáveis
 localidades = {
@@ -120,7 +119,7 @@ ret = receita.pop('mar')
 print(ret)
 print(receita)
 # Precisamos sempre informar a chave, caso não encontre o elemento um KeyError é retornado
-# Ao removermos um objeto o valor deste é sempre retornado
+# Ao removermos um objeto desta forma(pop) o valor deste é sempre retornado
 
 # Forma 2
 
@@ -164,7 +163,7 @@ carrinho = (produto1, produto2)
 print(carrinho)
 -------------------------
 # Forma 3 (CORRETA) - DICIONÁRIO
-carrinho = {}
+carrinho = []
 produto1 = {'nome': 'Playstation 4', 'quantidade': 1, 'preco': 2300.00}
 produto2 = {'nome': 'God of War 4', 'quantidade': 1, 'preco': 150.00}
 
