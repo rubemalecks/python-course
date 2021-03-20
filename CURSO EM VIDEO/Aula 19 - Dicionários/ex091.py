@@ -13,7 +13,7 @@ print('Valores Sorteados ...')
 for k, v in jogadores.items():
     print(f'Jogador {k} tirou {v}')
     sleep(0.7)
-ranking = sorted(jogadores.items(), key=itemgetter(1), reverse=True)
+ranking = sorted(jogadores.items(), key=itemgetter(1), reverse=True) # COLOCA EM ORDEM DECRESCENTE (FALSE=ORDEM CRESCENTE)
 print('='*42)
 print('=== RANKING DE JOGADORES === ')
 for indice, valor in enumerate(ranking):

@@ -9,12 +9,15 @@ com quantos anos a pessoa vai se aposentar.
 from datetime import datetime
 dados = {}
 dados['nome'] = str(input('Nome: '))
-dados['nasc'] = int(input('Ano de Nascimento: '))
+nasc = int(input('Ano de Nascimento: '))
+dados['idade'] = datetime.now().year - nasc
 dados['carteira'] = int(input('Carteira de Trabalho: '))
-dados['idade'] = datetime.now().year - dados['nasc']
-if dados['carteira'] != 0:
-    dados['ano_contratacao'] = int(input('Ano de Contratação: '))
-    dados['salario'] = float(input('Salario: R$'))
-    dados['aposent'] = dados['idade'] + ((dados['ano_contratacao'] + 35) - datetime.now().year)
 
-    print(dados['aposent'])
+if dados['carteira'] != 0:
+
+    dados['ano_contratacao'] = int(input('Ano de Contratação: '))
+    dados['salario'] = float(input('Salario: R$ '))
+    dados['aposent'] = dados['idade'] + ((dados['ano_contratacao'] + 35) - datetime.now().year)
+print('='*42)
+for c, v in (dados.items()):
+    print(f'~ {c} tem o valor {v}')
