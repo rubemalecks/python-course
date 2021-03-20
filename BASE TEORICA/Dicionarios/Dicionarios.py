@@ -218,7 +218,7 @@ print(novo)
 outro = {}.fromkeys('a', 'b') #{}.fromkeys('chave', 'valor')
 
 print(outro)
-print(type(outro))
+print(type(outro))'
 
 usuario = {}.fromkeys(['nome', 'pontos', 'email', 'profile'],'desconhecido')
 print(usuario)
