@@ -27,6 +27,7 @@ for chave, valor in dados.items():
 print('='*42)
 
 print(f'O jogador {dados["jogador"]} fez {partidas} partidas')
+
 for j in range(partidas):
     print(f'=> Na {j+1}ª partida, fez {gols[j]} gols')
 print(f'Foi um total de {dados["total"]} gols')
