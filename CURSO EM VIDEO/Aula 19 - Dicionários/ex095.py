@@ -45,7 +45,7 @@ while True:
     select_jogador = int(input('Mostrar dados de qual jogador? (999 para parar) ')) 
     if select_jogador == 999:
         break
-    elif select_jogador > len(time)-1:
+    elif select_jogador >= len(time):
         print(f'ERRO!! NÃO EXISTE JOGADOR COM CODIGO {select_jogador}!!')
     else:
         print(f'--- LEVANTAMENTO DE {time[select_jogador]["nome"]} ---')
