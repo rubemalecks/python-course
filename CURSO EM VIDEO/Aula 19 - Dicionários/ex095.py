@@ -3,7 +3,7 @@ Aprimorando os Dicionários
 Aprimore o DESAFIO 093 para que ele funcione com vários jogador, incluindo
 um sistema de visualização de detalhes do aproveitamento de cada jogador.
 """
-test1 = int()
+
 time = list()
 jogador = dict()
 gols = list()
@@ -25,7 +25,7 @@ while True:
         break
 
 print('=-'*21)
-# CABEÇALHO
+
 print('cod  ', end='')
 
 for k in jogador.keys():
@@ -39,7 +39,6 @@ for index, dado_jogador in enumerate(time):
         print(f'{str(dado):<15}', end='')
     print()
 
-
 while True:
     print('='*42)    
     select_jogador = int(input('Mostrar dados de qual jogador? (999 para parar) ')) 
@@ -49,5 +48,7 @@ while True:
         print(f'ERRO!! NÃO EXISTE JOGADOR COM CODIGO {select_jogador}!!')
     else:
         print(f'--- LEVANTAMENTO DE {time[select_jogador]["nome"]} ---')
-        for x in range(int(time[select_jogador]['partidas'])):
-            print(f' ~ Na {x+1}ª partida ele fez {time[select_jogador]["gols"][x]} gols')
+        for part, gols in enumerate((time[select_jogador]['gols'])):
+            print(f' ~ Na {part+1}ª partida ele fez {gols} gols')
+
+print('<< VOLTE SEMPRE >>')

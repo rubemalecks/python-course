@@ -15,6 +15,6 @@ elif dados_aluno['media'] >= 6:
     dados_aluno['situacao'] = 'RECUPERAÇÃO'
 else:
     dados_aluno['situacao'] = 'REPROVADO!'
-
+print('='*42)
 for k, v in dados_aluno.items():
-    print(f'{k} é igual a {v}')
+    print(f' - {k} é igual a {v}')
