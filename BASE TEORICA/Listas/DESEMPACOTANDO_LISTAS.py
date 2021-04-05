@@ -8,12 +8,12 @@ print(restante)
 
 '''se quiser pegar o ultimo nome da lista'''
 
-n1, n2, *restante, ultimo_nome = lista #*restante recebe os valores mas o ultimo fica reservado a outra variavel
+n1, n2, *restante, ultimo_nome = lista #*restante recebe os valores mas o ultimo_nome fica reservado a outra variavel
 print(restante, ultimo_nome)
 
 
 '''se colocar assim:'''
-*outra_lista, n1, n2, n3 = lista # n1, n3, n3 vão receber os 3ultimos respectivamentes
+*outra_lista, n1, n2, n3 = lista # n1, n3, n3 vão receber os 3ultimos respectivamente
                                  # e outra_lista recebe os primeiros valores
                                  #cada variavel sem * só recebe 1 valor
 """Se não será usado o restante da variavel"""
