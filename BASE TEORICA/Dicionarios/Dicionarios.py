@@ -7,8 +7,8 @@ são conhecidos por mapas.
 Dicionários são coleções do tipo chave/valor
 
 Dicionários são representados por chaves {}
-print(type({}))
->>> <class 'dict'>
+>>> print(type({}))
+<class 'dict'>
 
 OBS: Sobre dicionários:
     - Chave e valor são separados por 2 pontos 'chave:valor';
@@ -18,15 +18,15 @@ OBS: Sobre dicionários:
 # Criação de Dicionários
 
 # Forma 1 (Mais Comum)
-paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguai'}
+>>> paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguai'}
 
-print(paises)
-print(type(paises))
-print(paises['eua'])
+>>> print(paises)
+>>> print(type(paises))
+>>> print(paises['eua'])
 -----------------------------------------
 # Forma 2 (Menos comum)
 
-paises = dict(br='Brasil', eua='Estados Unidos', py='Paraguai')
+>>> paises = dict(br='Brasil', eua='Estados Unidos', py='Paraguai')
 print(paises)
 print(type(paises))
 ------------------------------------------
@@ -64,7 +64,7 @@ if 'ru' in paises:
     russia = paises ['ru']
     
 ---------------------------------------------
-# Podemos utilizar qualquer tipo de dado inclusive (int, float, string, bool, tuplas) 
+# Podemos utilizar qualquer tipo de dado, inclusive (int, float, string, bool, tuplas) 
 
 # Tuplas por exemplo são bastante interessantes como chaves, pois são imutáveis
 localidades = {
@@ -72,7 +72,7 @@ localidades = {
     (40.7128, 74.0060): 'Escritório em Nova York',
     (35.7749, 122.4194): 'Escritório em São Paulo'
 
-}
+} 
 print(localidades)
 print(type(localidades))
 -----------------------------------------------
@@ -119,7 +119,7 @@ ret = receita.pop('mar')
 print(ret)
 print(receita)
 # Precisamos sempre informar a chave, caso não encontre o elemento um KeyError é retornado
-# Ao removermos um objeto desta forma(pop) o valor deste é sempre retornado
+# Ao removermos um objeto desta forma(pop) o valor deste é sempre retornado.
 
 # Forma 2
 
@@ -127,6 +127,7 @@ del receita['fev']  # NESTE CASO O VALOR REMOVIDO NÃO É RETORNADO
 print(receita)
 # Precisamos sempre informar a chave, caso não encontre o elemento um KeyError é retornado
 ------------------------------------------------------
+
 # Imagine que você tem um comércio eletronico, onde temos um carrinho de compras no qual adicionamos produtos.
 
 '''Carrinho de Compras:
@@ -177,7 +178,7 @@ print(carrinho)
 -------------------------------------------------------
 # Métodos de dicionários
 #>>>  dir({}) - ver
-
+-------------------------
 d = dict(a=1, b=2, c=3)
 
 print(d)
@@ -189,9 +190,11 @@ print(d)
 ----------------------------
 
 # Copiando um dicionário para outro
-
+EX
 d = dict(a=1, b=2, c=3)
-# Forma 1 - Deep Copy
+---------------
+
+# Forma 1 - Shallow Copy
 
 novo = d.copy() 
 print(novo)
@@ -201,15 +204,71 @@ novo['d'] = 4
 print(d)
 print(novo)
 
-print('----')
-# Forma 2 - Shallow Copy
-novo = d
-print(novo)
-novo['d'] = 4
-print(d)
-print(novo)
+------------
+EXEMPLO 2 - Shallow Copy
 
-# Tanto 'novo' quanto 'd' são alterados
+x = dict(a=0, b=1, c=2)
+
+>>> from copy import copy
+>>> xc = copy(x)
+>>> x == xc     
+# True
+
+------------------------------------
+# Forma 2 - Deep Copy (cópia profunda)
+
+>>> from copy import deepcopy
+>>> xd = deepcopy(x)
+>>> x == xd
+# True    
+------
+
+# POR QUE USAR?
+
+A diferença entre cópia profunda e rasa é relevante apenas para objetos compostos (objetos que contêm 
+outros objetos, como listas ou instâncias de classe):
+•	Uma cópia rasa constrói um novo objeto composto e então (na medida do possível) insere nele referências 
+aos objetos encontrados no original.
+•	Uma cópia profunda constrói um novo objeto composto e então, recursivamente, insere nele cópias dos objetos
+ encontrados no original.
+
+Frequentemente, existem dois problemas com operações de cópia profunda que não existem com operações de cópia rasa:
+•	Objetos recursivos (objetos compostos que, direta ou indiretamente, contêm uma referência a si mesmos) podem 
+causar um laço recursivo.
+•	Como a cópia profunda copia tudo, ela pode copiar muito, como dados que devem ser compartilhados entre as cópias.
+
+A função deepcopy() evita esses problemas:
+•	mantendo um dicionário memo de objetos já copiados durante a passagem de cópia atual; e
+•	permitindo que as classes definidas pelo usuário substituam a operação de cópia ou o conjunto de componentes 
+copiados.
+
+Este módulo não copia tipos como módulo, método, stack trace (situação da pilha de execução), quadro de empilhamento,
+ arquivo, soquete, janela, vetor ou outros tipos 
+semelhantes. Ele “copia” funções e classes (rasas e profundamente), devolvendo o objeto original inalterado; isso é
+ compatível com a maneira que estes itens são tratados pelo módulo pickle.
+
+Cópias rasas de dicionários podem ser feitas usando dict.copy(), e de listas atribuindo uma fatia de toda a lista, 
+por exemplo, lista_copiada = lista_original[:].
+
+# EXEMPLO 2 (usando deepcopy)
+
+>>> from copy import deepcopy
+>>> pessoas = ['rubem', 'álecks', 'gabriel', 'angela', ['outros']]
+>>> copia_profunda = deepcopy(pessoas)
+>>> copia_profunda[4][0] = 'etc'    # ['rubem', 'álecks', 'gabriel', 'angela', ['etc']]
+>>> copia_profunda == pessoas
+# False
+
+# EXEMPLO 3 (mostrando problema shallow copy)
+
+>>> from copy import copy
+>>> pessoas = ['rubem', 'álecks', 'gabriel', 'angela', ['outros']]
+>>> copia_rasa = copy(pessoas)
+>>> copia_rasa[4][0] = 'etc'    # tanto copia_rasa quanto pessoas são alterados
+>>> copia_rasa == pessoas
+# True
+
+
 -----------------------------------------------------------
 
  # Forma não usual de criação de dicionários
@@ -230,7 +289,7 @@ print(type(usuario)) # 4 key, e 1 unico dados para todos
 veja = {}.fromkeys('teste', 'valor')
 print(veja)
 '''>>> {'t': 'valor', 'e': 'valor', 's': 'valor'}''' # ele não continuou (tes'te') 
-#pois em dicionarios não há repetição de chave
+# pois em dicionarios não há repetição de chave
 
 veja = {}.fromkeys(range(1,11), 'novo')
 print(veja)
