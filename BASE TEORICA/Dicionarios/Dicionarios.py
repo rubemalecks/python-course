@@ -283,7 +283,7 @@ usuario = {}.fromkeys(['nome', 'pontos', 'email', 'profile'],'desconhecido')
 print(usuario)
 print(type(usuario)) # 4 key, e 1 unico dados para todos
 
-# O método fromkeys recebe 2 parâmetros: um interávél e um valor
+# O método fromkeys recebe 2 parâmetros: um interável e um valor
 # Ele vai gerar para cada valor do iterável uma chave e irá atribuir a essa chave o valor informado.
 
 veja = {}.fromkeys('teste', 'valor')
@@ -293,4 +293,13 @@ print(veja)
 
 veja = {}.fromkeys(range(1,11), 'novo')
 print(veja)
+
+Outro Exemplo:
+
+veja = {}.fromkeys('teste', 'valor')
+print(veja)
+{'t': 'valor', 'e': 'valor', 's': 'valor'}
+
+# Já que dicionarios não podem ter chaves iguais ele só retorna 'test', evitando repetir as mesmas se
+chaves (ao usas 't' e 'e') que já eram chaves existentes.
 """
