@@ -9,6 +9,8 @@ Olá, Mundo!
 ~~~~~~~~~~~
 """
 def escreva(x):
+    print('~'*len(x))
     print(f'{x}')
+    print('~'*len(x))
 
 escreva('Olá, Mundo!')
