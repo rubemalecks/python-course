@@ -8,4 +8,7 @@ Saída:
 Olá, Mundo!
 ~~~~~~~~~~~
 """
+def escreva(x):
+    print(f'{x}')
 
+escreva('Olá, Mundo!')
