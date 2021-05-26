@@ -20,7 +20,10 @@ if dig2 == 10:
     dig2 = 0
 cpf_novo = str(cpf_novo) + str(dig2)
 
-if cpf_novo == cpf:
+
+if cpf == cpf[0]*11:
+    print('CPF INVÁLIDO')
+elif cpf_novo == cpf:
     print('CPF VÁLIDO')
 else:
     print('CPF INVÁLIDO')
