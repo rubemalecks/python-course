@@ -16,8 +16,11 @@ def enunciado(i, f, p):
     linha()
     if p < 0:
         print(f'Contagem de {i} até {f}, de {p*-1} em {p*-1}:')
+        sleep(1.0)
     else:
         print(f'Contagem de {i} até {f}, de {p} em {p}:')
+        sleep(1.0)
+        
 def contador(i, f, p):
     if p == 0:
         p = 1
@@ -26,12 +29,14 @@ def contador(i, f, p):
         if p > 0:
             p *= -1
         for x in range(i, f-1, p):
+            sleep(0.9)
             print(x,end=' ')
         print('... FIM!!!')
     else:
         if p < 0:
             p *= -1
         for x in range(i, f+1, p):
+            sleep(0.9)
             print(x,end=' ')
         print('... FIM!!!')
     linha()
