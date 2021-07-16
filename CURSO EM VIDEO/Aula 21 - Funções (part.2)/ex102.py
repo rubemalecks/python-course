@@ -12,10 +12,10 @@ def fatorial(x, show=False):
     """[Fatorial]
 
     Args:
-        x ([int]): [recebe um numero inteiro]
+        x ([int]): [número a ser calculado]
         show (bool, optional): 
             [True] mostra a conta,  
-            [False] deixa ela oculta.
+            [False] não mostra a conta.
 
     Returns:
         [int]: [Fatorial de x]
@@ -23,11 +23,11 @@ def fatorial(x, show=False):
     r = 1
     for c in range(x, 0, -1): 
         r *= c
-        if r > 1 and show == True:
+        if show:
             if c == 1:
                 print('1 =', end=' ')
                 continue
             print(f'{c}', end=' x ')
     return r
 help(fatorial)
-print(fatorial(5,True))
+print(fatorial(5))
